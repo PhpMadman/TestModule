@@ -44,10 +44,7 @@ class TestModule extends Module
 	public function install()
 	{
 		if (!parent::install()
-			|| !$this->registerHook('displayAdminOrderTabOrder')
-			|| !$this->registerHook('displayAdminOrderContentOrder')
-			|| !$this->registerHook('displayAdminOrderTabShip')
-			|| !$this->registerHook('displayAdminOrderContentShip')
+// 			|| !$this->registerHook('displayAdminOrder')
 		)
 			return false;
 
@@ -55,21 +52,8 @@ class TestModule extends Module
 	}
 
 	/** Module functions  **/
-	public function hookDisplayAdminOrderTabOrder($params)
+	public function hookDisplayAdminOrder($params)
 	{
-		return $this->display(__FILE__, '/views/templates/hook/tab_order.tpl');
-	}
-	public function hookDisplayAdminOrderContentOrder($params)
-	{
-		return $this->display(__FILE__, '/views/templates/hook/content_order.tpl');
-	}
-	public function hookDisplayAdminOrderTabShip($params)
-	{
-		return $this->display(__FILE__, '/views/templates/hook/tab_ship.tpl');
-	}
-	public function hookDisplayAdminOrderContentShip($params)
-	{
-		return $this->display(__FILE__, '/views/templates/hook/content_ship.tpl');
 	}
 }
 ?>
