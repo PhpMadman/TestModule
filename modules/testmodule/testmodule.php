@@ -61,6 +61,7 @@ class TestModule extends Module
 	}
 	public function hookDisplayAdminOrderContentOrder($params)
 	{
+		$this->smarty->assign(array('order' => $params['order']));
 		return $this->display(__FILE__, '/views/templates/hook/content_order.tpl');
 	}
 	public function hookDisplayAdminOrderTabShip($params)
